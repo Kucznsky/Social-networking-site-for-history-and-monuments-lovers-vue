@@ -8,9 +8,6 @@ import HelloWorld from './views/HomePage'
 
 export default {
   name: 'App',
-  components: {
-    HomePage
-  }
 }
 </script>
 

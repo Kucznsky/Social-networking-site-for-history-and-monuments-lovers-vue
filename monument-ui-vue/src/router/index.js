@@ -1,6 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HomePage from '@/views/homePage.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '@/views/HomePage.vue'
 import PostPage from '@/views/PostPage.vue'
 import NewPostForm from '@/views/NewPostForm.vue'
 import UserPosts from '@/views/UserPosts.vue'
@@ -9,39 +8,45 @@ import UserRegisteredMessage from '@/views/UserRegisteredMessage.vue'
 import NotVerifiedMessage from '@/views/NotVerifiedMessage.vue'
 import RegisterLoginPage from '@/views/RegisterLoginPage.vue'
 
-Vue.use(Router)
-
-export default new Router({
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
+      name: "home",
       component: HomePage,
       children: [
         {
           path: 'post/:id',
+          name: "post",
           component: PostPage
         },
         {
           path: 'new-post',
+          name: "new-post",
           component: NewPostForm
           // auth guard
         },
         {
           path: 'users-posts/:id',
+          name: "users-posts",
           component: UserPosts
           // auth guard
         },
         {
           path: 'liked-posts/:id',
+          name: 'liked-posts',
           component: LikedPosts
           // auth guard
         },
         {
           path: 'user-registered',
+          name: 'user-registered',
           component: UserRegisteredMessage
         },
         {
           path: 'not-verified',
+          name: 'not-verified',
           component: NotVerifiedMessage
         },
         {
@@ -60,6 +65,8 @@ export default new Router({
         }
       ] 
     },
-    { path: '**', redirectTo: '/' },
+    { path: '/**', redirectTo: '/' },
   ]
 })
+
+export default router

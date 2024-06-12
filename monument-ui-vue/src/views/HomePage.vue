@@ -1,6 +1,6 @@
 <template>
   <div>
-blb
+    home
   </div>
 </template>
 

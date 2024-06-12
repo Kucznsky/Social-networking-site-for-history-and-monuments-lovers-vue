@@ -1,15 +1,16 @@
 <template>
     <div>
-  blb
+    navbar
     </div>
   </template>
   
   <script>
   export default {
-    name: 'NewPostForm',
+    name: 'NavBar',
   }
   </script>
   
   <style scoped>
   
   </style>
+  

@@ -1,5 +1,3 @@
-import { UserResponse } from './user.interface';
-
 export interface CommentResponse {
   _id: string;
   author: string;

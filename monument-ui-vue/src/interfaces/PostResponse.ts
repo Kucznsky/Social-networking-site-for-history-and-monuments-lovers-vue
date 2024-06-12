@@ -1,6 +1,6 @@
 import { Category } from '../enums';
-import { LocalisationResponse } from './localisation.interface';
-import { UserResponse } from './user.interface';
+import { LocalisationResponse } from './LocalisationResponse';
+import { UserResponse } from './UserResponse';
 
 export interface PostResponse {
   _id: string;

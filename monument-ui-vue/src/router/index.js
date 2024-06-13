@@ -14,58 +14,60 @@ const router = createRouter({
     {
       path: '/',
       name: "home",
-      component: HomePage,
+      component: HomePage,},
+    {
+      path: '/post/:id',
+      name: "post",
+      component: PostPage
+    },
+    {
+      path: '/new-post',
+      name: "new-post",
+      component: NewPostForm
+      // auth guard
+    },
+    {
+      path: '/users-posts/:id',
+      name: "users-posts",
+      component: UserPosts
+      // auth guard
+    },
+    {
+      path: '/liked-posts/:id',
+      name: 'liked-posts',
+      component: LikedPosts
+      // auth guard
+    },
+    {
+      path: '/user-registered',
+      name: 'user-registered',
+      component: UserRegisteredMessage
+    },
+    {
+      path: '/not-verified',
+      name: 'not-verified',
+      component: NotVerifiedMessage
+    },
+    {
+      path: '/auth',
+      // autentication page guard
       children: [
         {
-          path: 'post/:id',
-          name: "post",
-          component: PostPage
+          path: 'login',
+          name: 'login',
+          component: RegisterLoginPage
         },
         {
-          path: 'new-post',
-          name: "new-post",
-          component: NewPostForm
-          // auth guard
-        },
-        {
-          path: 'users-posts/:id',
-          name: "users-posts",
-          component: UserPosts
-          // auth guard
-        },
-        {
-          path: 'liked-posts/:id',
-          name: 'liked-posts',
-          component: LikedPosts
-          // auth guard
-        },
-        {
-          path: 'user-registered',
-          name: 'user-registered',
-          component: UserRegisteredMessage
-        },
-        {
-          path: 'not-verified',
-          name: 'not-verified',
-          component: NotVerifiedMessage
-        },
-        {
-          path: 'auth',
-          // autentication page guard
-          children: [
-            {
-              path: 'login',
-              component: RegisterLoginPage
-            },
-            {
-              path: 'register',
-              component: RegisterLoginPage
-            }
-          ]
+          path: 'register',
+          name: 'register',
+          component: RegisterLoginPage
         }
-      ] 
+      ]
     },
-    { path: '/**', redirectTo: '/' },
+    {
+      path :'/:pathMatch(.*)*',
+      component: HomePage
+    }
   ]
 })
 

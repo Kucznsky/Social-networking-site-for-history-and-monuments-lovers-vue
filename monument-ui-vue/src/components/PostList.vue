@@ -1,12 +1,12 @@
 <template>
-    <nav>
-    navbar
-    </nav>
+    <div>
+        post list
+    </div>
   </template>
   
   <script>
   export default {
-    name: 'NavBar',
+    name: 'PostList',
   }
   </script>
   

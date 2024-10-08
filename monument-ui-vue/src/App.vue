@@ -3,9 +3,9 @@
   <RouterView></RouterView>
 </template>
 
-<script>
+<script lang="ts">
 import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'App',
